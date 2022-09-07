@@ -1,11 +1,19 @@
 .chat-text{
     color: white;
+    font-family: Arial;
 }
 
-#inputs-container{
-    position: absolute;
+#inputs-container *{
+    padding: 20px;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+#inputs-container #chat-btn{
+    margin: 20px
 }
 
 #chat{
-
+    justify-self: flex-end;
+    align-self: flex-end;
 }

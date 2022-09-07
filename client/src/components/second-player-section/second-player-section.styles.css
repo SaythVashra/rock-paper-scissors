@@ -30,6 +30,8 @@
     margin: 20px;
     width: 200px;
     flex: 100%;
+    transition: 0.2s;
+    border-radius: 5px;
 }
 
 #second-img-container{

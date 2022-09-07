@@ -1,8 +1,8 @@
 #game-screen{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -16,7 +16,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
+    justify-content: space-between;
+    height: 700px;
 }
 
 #vs-text{

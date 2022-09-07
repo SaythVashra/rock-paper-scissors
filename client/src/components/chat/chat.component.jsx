@@ -21,10 +21,10 @@ const Chat = (props) => {
                 return <h1 className={'chat-text'}>{message}</h1>
             })}
 
-            <div id={'inputs-container'}>
-                <input onChange={updateMessageText} placeholder={"Message"}/>
-                <button onClick={sendMessage}>Send Message</button>
-            </div>
+            <form id={'inputs-container'}>
+                <input id={'chat-input'} onChange={updateMessageText} onSubmit={sendMessage} autoComplete={'off'} placeholder={"Message"}/>
+                <button id={'chat-btn'} onClick={sendMessage}>Send Message</button>
+            </form>
         </div>
     )
 };

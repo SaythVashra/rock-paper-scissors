@@ -120,8 +120,12 @@ const App = () => {
         setMessageText(inputText);
     };
 
-    const sendMessage = () => {
-        socket.emit('send-message', { message: messageText });
+    const sendMessage = (event) => {
+        event.preventDefault();
+        if (messageText.trim() !== ''){
+            socket.emit('send-message', { message: `${playerName}: ${messageText}` });
+            event.currentTarget.value = '';
+        }
     };
 
     return (
@@ -152,116 +156,5 @@ const App = () => {
         </div>
     );
 };
-
-// const App = () => {
-//
-//     const [isLogged, setIsLogged] = useState(false);
-//     const [playerName, setPlayerName] = useState('');
-//     const [roomId, setRoomId] = useState('');
-//
-//     const createNewRoom = () => {
-//         if (playerName !== '') {
-//             generateRandomRoomId();
-//             setIsLogged(true);
-//             socket.emit('join-room', playerName, roomId);
-//         }
-//     };
-//
-//     useEffect(() => {
-//
-//         // socket.on('receive-message', (data) => {
-//         //     updateMessagesLog(data.message);
-//         // });
-//
-//         socket.on('joinedRoom', (arg1, arg2) => {
-//             console.log(`${arg1} has joined the room ${arg2}`);
-//         });
-//
-//         return () => {
-//             socket.off('joinedRoom');
-//             // socket.off('pong');
-//             // socket.off('receive-message');
-//         };
-//     }, []);
-//
-//     const generateRandomRoomId = () => {
-//
-//         let randomRoomId = '';
-//
-//         for (let i = 0; i < 6; i++) {
-//             const randomNum = (Math.round(Math.random() * 9)).toLocaleString();
-//             randomRoomId = randomRoomId + randomNum;
-//         }
-//
-//         setRoomId(randomRoomId);
-//     };
-//
-//     const updatePlayerName = (event) => {
-//         const newPlayerName = event.target.value;
-//         setPlayerName(newPlayerName);
-//     };
-//
-//     const updateRoomId = (event) => {
-//         const newRoomId = event.target.value;
-//         setRoomId(newRoomId);
-//     };
-//
-//     return (
-//         <div>
-//             {isLogged
-//                 ? <h1>{playerName} is logged in room: {roomId}</h1>
-//                 : <IntroScreen
-//                     isLogged={isLogged}
-//                     createNewRoom={createNewRoom}
-//                     updatePlayerName={updatePlayerName}
-//                     updateRoomId={updateRoomId}
-//                 />
-//             }
-//         </div>
-//     )
-
-
-//
-//   const [messageText, setMessageText] = useState('');
-//   const [messages, setMessages] = useState([]);
-//
-//   useEffect(() => {
-//
-//       socket.on('receive-message', (data) => {
-//           updateMessagesLog(data.message);
-//       });
-//
-//       return () => {
-//           socket.off('pong');
-//           socket.off('receive-message');
-//       };
-//   }, []);
-//
-//   let messagesArray = [];
-//
-//   const updateMessagesLog = (message) => {
-//       setMessages(messages => [...messages, message]);
-//   };
-//
-//   const updateMessageText = (event) => {
-//       const inputText = event.target.value;
-//       setMessageText(inputText);
-//   };
-//
-//   const sendMessage = () => {
-//       socket.emit('send-message', { message: messageText });
-//   };
-//
-// return(
-//     <div className={'App'}>
-//       <input onChange={updateMessageText} placeholder={"Message"} />
-//
-//       <button onClick={sendMessage}>Send Message</button>
-//         {messages.map((message) => {
-//             return <h1>{message}</h1>
-//         })}
-//     </div>
-// )
-// };
 
 export default App;

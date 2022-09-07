@@ -25,6 +25,26 @@
     margin: 20px;
     width: 200px;
     flex: 100%;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.rps-btn:hover{
+    /*box-shadow:inset 0 0 0 10px white;*/
+    outline:5px solid white;
+    transform: scale(1.1, 1.1);
+    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.68);
+}
+
+.rps-btn-selected{
+    margin: 20px;
+    width: 200px;
+    flex: 100%;
+    transition: 0.2s;
+    border-radius: 5px;
+    outline:10px solid yellowgreen;
+    transform: scale(1.1, 1.1) translateY(-20px);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.84);
 }
 
 #img-container{
