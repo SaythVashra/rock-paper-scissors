@@ -1,0 +1,35 @@
+body{
+    background-color: #282c34;
+}
+
+#intro-form{
+    background-color: #484f58;
+    width: 800px;
+    border: 3px black outset;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-container{
+    margin: 20px 20px 20px;
+    display: flex;
+}
+
+.text-input{
+    font-size: 3rem;
+    flex: 60%;
+}
+
+.intro-btn{
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 3rem;
+    flex: 30%;
+}
+
+#intro-create-btn{
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,33 @@
+#player-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+.player-dividers{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#player-name{
+    color: white;
+    font-family: Arial;
+}
+
+.rps-btn{
+    margin: 20px;
+    width: 200px;
+    flex: 100%;
+}
+
+#img-container{
+    display: flex;
+    flex-direction: column;
+}

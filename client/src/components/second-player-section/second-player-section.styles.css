@@ -1,0 +1,38 @@
+#second-player-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+.second-player-dividers{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#waiting-for-player{
+    color: white;
+    font-family: Arial;
+}
+
+#second-player-name{
+    color: white;
+    font-family: Arial;
+}
+
+.second-rps-btn{
+    margin: 20px;
+    width: 200px;
+    flex: 100%;
+}
+
+#second-img-container{
+    display: flex;
+    flex-direction: column;
+}
